@@ -9,10 +9,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class GreatOutDoorDocumentationOrderManagementApplication {
+public class FindTheOrderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GreatOutDoorDocumentationOrderManagementApplication.class, args);
+		SpringApplication.run( FindTheOrderApplication.class, args);
 	}
 
 }

@@ -23,7 +23,7 @@ public class AddItemToCartServiceImpl implements AddItemToCartService{
  
     
 	@Override
-	public boolean addItemToCart(CartDTO cart) {
+	public Object addItemToCart(CartDTO cart) {
 		// Adding to cart
 		CartDTO b = dao.save(cart);
 		if (b != null)

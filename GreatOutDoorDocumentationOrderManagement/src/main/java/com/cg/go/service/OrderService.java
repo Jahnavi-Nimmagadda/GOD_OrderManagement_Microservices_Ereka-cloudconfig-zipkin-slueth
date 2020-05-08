@@ -1,16 +1,14 @@
 package com.cg.go.service;
 
 
-import com.cg.go.dto.CartDTO;
+import java.util.List;
+
+import com.cg.go.dto.OrderProductMapDTO;
 
 public interface OrderService {
 
-	boolean addItemToCart(CartDTO cart);
 
-	boolean removeItemFromCart(String productId,String userId);
 
-	boolean deleteOrderProductMapEntity(String orderId);
-
-	Object getOrderAndCartService(String userId);
+	List<OrderProductMapDTO> getDeleteByOrderIdDetails(String orderId);
 
 }

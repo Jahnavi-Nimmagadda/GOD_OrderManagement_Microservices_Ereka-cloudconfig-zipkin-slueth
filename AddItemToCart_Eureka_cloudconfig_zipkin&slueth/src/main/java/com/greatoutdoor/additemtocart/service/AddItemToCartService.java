@@ -5,5 +5,5 @@ import com.greatoutdoor.additemtocart.entities.CartDTO;
 
 public interface AddItemToCartService {
 
-	boolean addItemToCart(CartDTO cart);
+	Object addItemToCart(CartDTO cart);
 }

@@ -1,26 +1,36 @@
 package com.cg.go.controller;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.cg.go.dto.CartDTO;
+import com.cg.go.dto.OrderProductMapDTO;
+import com.cg.go.exceptions.OrderIdNotFoundException;
 import com.cg.go.service.OrderServiceImpl;
 
 @RestController
 @RequestMapping("/Order")
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OrderController {
 
+	
+	@ResponseStatus(value=HttpStatus.NOT_FOUND,reason="controller order id is not present")
+	@ExceptionHandler({Exception.class})
+	public void handleException()
+	{
+		
+	}
+	
 	@Autowired
 	private OrderServiceImpl service;
 
@@ -32,38 +42,11 @@ public class OrderController {
 		this.service = service;
 	}
 
-	@PostMapping("/AddToCart")
-	public String addItemToCart(@RequestBody CartDTO cart) {
-		if ((service.addItemToCart(cart))) {
-			return "Added Sucessfully";
-		} else
-			return "Unsucessful";
-	}
-
-	@DeleteMapping("/DeleteOrderProductMapEntity/{orderId}")
-	public String deleteOrderProductMapEntity(@PathVariable("orderId") String orderId) {
-		if ((service.deleteOrderProductMapEntity(orderId))) {
-			return "Cancelled the order Sucessfully";
-		} else
-			return "Unsucessful";
-	}
 	
-	@GetMapping("/GetOrderAndCartService/{userId}")
-	public Object getOrderAndCartService(@PathVariable("userId") String userId)
-    { return service.getOrderAndCartService(userId);
+	@GetMapping("/DeleteOrderProductMapEntityDetails/{orderId}")
+	public List<OrderProductMapDTO> getDeleteByOrderIdDetails(@PathVariable("orderId") String orderId) throws OrderIdNotFoundException
+    { return service.getDeleteByOrderIdDetails(orderId);
 	     }
 	     
-	
-		
-	
-	
 
-	@DeleteMapping("/RemoveItemFromCart/{productId}/{userId}")
-	public String removeItemFromCart(@PathVariable("productId") String productId,
-			@PathVariable("userId") String userId) {
-		if ((service.removeItemFromCart(productId, userId))) {
-			return "removed the Item from cart Sucessfully";
-		} else
-			return "Given product,does not exist the cart";
-	}
 }

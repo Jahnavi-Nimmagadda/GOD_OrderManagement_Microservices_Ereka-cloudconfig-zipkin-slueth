@@ -33,7 +33,7 @@ public class AddItemToCartController {
 	}
 	@PostMapping("/AddToCart")
 	public String addItemToCart(@RequestBody CartDTO cart) {
-		if ((service.addItemToCart(cart))) {
+		if ((service.addItemToCart(cart))!=null) {
 			return "Added Sucessfully";
 		} else
 			return "Unsucessful";

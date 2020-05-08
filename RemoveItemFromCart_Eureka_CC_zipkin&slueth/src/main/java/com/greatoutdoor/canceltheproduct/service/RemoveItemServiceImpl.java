@@ -32,8 +32,7 @@ import com.greatoutdoor.canceltheproduct.entities.CartDTO;
 			public boolean removeItemFromCart(String productId, String userId) {
 				Optional<CartDTO> c = dao.findById(userId);
 				if (c != null) {
-					dao.deleteById(productId);// deleting record with given productid in cartdto table
-					// pdao.delete(productId);
+					dao.deleteById(productId);
 					return true;
 				} else
 					return false;

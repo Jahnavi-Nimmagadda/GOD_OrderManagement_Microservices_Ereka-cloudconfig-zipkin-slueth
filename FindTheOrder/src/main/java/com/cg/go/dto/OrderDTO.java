@@ -1,12 +1,11 @@
-package com.greatoutdoor.vieworderstatus.entities;
+package com.cg.go.dto;
 
 import java.sql.Date;
 
 
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -15,7 +14,7 @@ import javax.persistence.Table;
 public class OrderDTO {
 
 	
-@Id
+	@Id
 private String orderId;
 private String userId;
 private String addressId;
@@ -24,7 +23,8 @@ private Date orderInitiateTime;
 private Date orderDispatchTime;
 
 
-
+@OneToOne(mappedBy="OrderDTO")
+OrderProductMapDTO orderProductMapDTO;
 //
 //@OneToOne
 //@PrimaryKeyJoinColumn(name="userId")

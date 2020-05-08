@@ -27,10 +27,10 @@ public class RemoveItemFromCartController {
 		return cartservice;
 	}
 	
+	
 @DeleteMapping("/RemoveItemFromCart/{productId}/{userId}")
-public String removeItemFromCart(@PathVariable("productId") String productId,
-		@PathVariable("userId") String userId) {
-	if ((cartservice.removeItemFromCart(productId, userId))) {
+public String removeItemFromCart(@PathVariable("productId") String productId,@PathVariable("userId") String userId) {
+	if ((cartservice.removeItemFromCart(productId, userId))==true) {
 		return "removed the Item from cart Sucessfully";
 	} else
 		return "Given product,does not exist the cart";
