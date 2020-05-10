@@ -1,4 +1,4 @@
-package com.greatoutdoor.vieworderstatus.entities;
+package com.greatoutdoor.vieworderstatus.dto;
 
 import java.sql.Date;
 
@@ -6,7 +6,6 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
 import javax.persistence.Table;
 
 
@@ -15,15 +14,13 @@ import javax.persistence.Table;
 public class OrderDTO {
 
 	
-@Id
+	@Id
 private String orderId;
 private String userId;
 private String addressId;
 private String orderDispatchStatus;
 private Date orderInitiateTime;
 private Date orderDispatchTime;
-
-
 
 //
 //@OneToOne

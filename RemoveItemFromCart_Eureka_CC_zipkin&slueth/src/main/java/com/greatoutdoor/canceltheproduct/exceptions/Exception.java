@@ -1,4 +1,4 @@
-package com.cg.go.exceptions;
+package com.greatoutdoor.canceltheproduct.exceptions;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -22,7 +22,7 @@ public class Exception extends Throwable {
 	@ExceptionHandler(value={Exception.class })
 	protected ErrorInfo handleConflict(Exception ex, HttpServletRequest req)
 	{
-		String bodyOfResponse=ex.getMessage();
+		String bodyOfResponse=ex.getMessage();//employee with this id is not present
 		String url=req.getRequestURL().toString();
 		return new ErrorInfo(url,bodyOfResponse);
 	}

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.greatoutdoor.vieworderstatus.dao.GetOrderStatusDao;
-import com.greatoutdoor.vieworderstatus.entities.OrderDTO;
+import com.greatoutdoor.vieworderstatus.dto.OrderDTO;
 
 @Service
 @Transactional
