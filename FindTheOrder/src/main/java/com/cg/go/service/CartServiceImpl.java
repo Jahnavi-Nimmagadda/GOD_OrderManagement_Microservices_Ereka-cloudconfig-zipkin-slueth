@@ -22,6 +22,9 @@ public class CartServiceImpl implements CartService {
 		return pdao;
 	}
 
+//this is service method where we are calling Dao object 
+//and using the findByUserId method declared in dao class to get the data from the database by userId  
+	   
     @Override
 public List<CartDTO>  getDeleteByOrderIdDetails(String userId) {
 

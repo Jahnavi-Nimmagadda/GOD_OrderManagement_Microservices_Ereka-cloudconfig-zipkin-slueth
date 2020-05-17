@@ -1,7 +1,6 @@
 package com.cg.go.dto;
 
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,7 +13,6 @@ public class OrderProductMapDTO {
 	private String ProductUIN;
 	private int productStatus;
 	private int giftStatus;
-
 	public String getOrderId() {
 		return orderId;
 	}

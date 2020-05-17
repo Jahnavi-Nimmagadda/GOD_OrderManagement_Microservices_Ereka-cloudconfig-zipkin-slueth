@@ -21,7 +21,8 @@ public class OrderServiceImpl implements OrderService {
 	public OrderProductMapDao getDao1() {
 		return pdao;
 	}
-
+	 //this is service method where we are calling Dao object 
+//and using the findByOrderId method declared in dao class to get the data from the database by orderId  
     @Override
 public List<OrderProductMapDTO>  getDeleteByOrderIdDetails(String orderId) {
 

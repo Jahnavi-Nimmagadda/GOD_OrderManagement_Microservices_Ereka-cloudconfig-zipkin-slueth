@@ -1,23 +1,20 @@
 package com.cg.go.dto;
 
 import javax.persistence.Entity;
-
 import javax.persistence.Id;
-
 import javax.persistence.Table;
 
 @Entity
 @Table(name="cart_dto")
 
 public class CartDTO {
-
 	private String userId;
-	public CartDTO() {
-		super();
-	}
 	@Id
 	private String productId;
 	private int quantity;
+	public CartDTO() {
+		super();
+	}
 	public String getUserId() {
 		return userId;
 	}
